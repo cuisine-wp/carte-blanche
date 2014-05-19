@@ -1,0 +1,49 @@
+/**
+* Header CSS file 
+* Styling for the header:
+* 
+*/
+
+header{
+	width:100%;
+	padding:20px 0;
+	background:#fff;
+	border-bottom:2px solid #eeeeee;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:200;
+
+	.logo{
+		float:left;
+		width:auto;
+		padding:0;
+		text-decoration:none;
+
+		h1{
+			font-size:32px;
+		}
+	}
+
+
+	ul{
+		margin:0;
+		padding:0;
+		list-style:none;
+
+
+		li{ display:inline-block;}
+
+		a{
+			display:block;
+			padding:12px 20px;
+			text-decoration:none;
+		}
+
+		a:hover{
+			color:#e897c2;
+		}
+	}
+
+
+}

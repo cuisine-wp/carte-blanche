@@ -1,0 +1,26 @@
+/**
+* Button CSS file 
+* Button + sub-button classes
+* 
+*/
+
+.button{
+
+	padding:10px 11px;
+	background:#000;
+	display:inline-block;
+	font-family:'apercu-bold';
+	color:#fff;
+	text-decoration:none;
+	&:hover{
+		background:#444;
+	}
+}
+
+
+
+
+.btn, a[class^="btn--"]{
+	@extend .button;
+}
+

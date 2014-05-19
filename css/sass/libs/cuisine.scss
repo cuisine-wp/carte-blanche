@@ -1,0 +1,37 @@
+/**
+* General Chef du Web / Cuisine styling
+* dev version here: http://bit.ly/q2G9Mm
+* 
+*/
+* { -webkit-font-smoothing: antialiased; }
+
+input, textarea{outline:none;}
+
+/* set all widths: */
+html, body{width:100%;margin:0;padding:0;}
+p,a,h1,h2,h3,h4,h5,h6{margin:0;padding:0;-webkit-margin-before:0;-webkit-margin-after:0;}
+ul, ol{margin:0;}
+table{width:100%;}
+.fullwidth, .onethird, .twothird, .half, .onefourth, .onefifth, .onesixth, .twofifth{float:left;}
+.fullwidth{width:100%;}
+.onethird{width:33%;}
+.twothird{width:66%;}
+.half{width:50%;}
+.onefourth{width:25%;}
+.onefifth{width:20%;}
+.onesixth{width:16.666666667%;}
+.twofifth{width:40%;}
+.cuisine-step{display:none;}
+.step-page{float:left;margin-right:15px;}
+.pull-right{float:right;}
+.onethird.nomargin, .twothird.nomargin, .half.nomargin,.onefourth.nomargin{padding-right:0;}
+
+.alignleft{float:left;margin:0 20px 20px 0;}
+.alignright{float:right;margin:0 0 20px 20px;}
+.aligncenter{margin:0 auto 20px auto;}
+.wp-caption-text{padding-bottom:20px;}
+
+/* increase frame-rate when scrolling by not registering pointer-events:*/
+.disable-hover, .disable-hover * { pointer-events: none !important; }
+a.mustache{display:block;;text-transform:uppercase;float:none;position:absolute;background:url('images/mustache.png');width:80px;height:15px;left:50%;margin-left:-40px;top:5px;opacity:.6;}
+a.mustache:hover{opacity:1;}
