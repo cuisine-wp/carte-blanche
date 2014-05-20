@@ -96,7 +96,7 @@
 	 * @access public
 	 * @return string (html)
 	 */
-	function chef_theme_logo(){
+	function ct_theme_logo(){
 	
 		$options = cuisine_get_theme_style();
 		$html = '<a class="logo" href="'.cuisine_site_url().'">';

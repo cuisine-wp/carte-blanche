@@ -5,33 +5,11 @@
 */
 
 /** LIBS IMPORT: */
-@import 'libs/normalize';
-@import 'libs/bootstrap-grid';
-@import 'libs/cuisine';
-
-/** VARS: */
-$font-color:#2d2d2d;
-$font-stack:Helvetica,sans-serif;
-$bgcolor:#f8f8f8;
-
-
-/** MIXINS: **/
-@mixin gradient($color) {
-  background: #f8f8f8; /* Old browsers */
-  background: -moz-linear-gradient(left, #fff 0%, #fff 50%, $color 50%, $color 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fff), color-stop(50%,#fff), color-stop(50%,$color), color-stop(100%,$color)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #fff 0%,#fff 50%,$color 50%,$color 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #fff 0%,#fff 50%,$color 50%,$color 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #fff 0%,#fff 50%,$color 50%,$color 100%); /* IE10+ */
-  background: linear-gradient(to right, #fff 0%,#fff 50%,$color 50%,$color 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='$color',GradientType=1 ); /* IE6-9 */
-}
-
-@mixin borderbox(){
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
+@import 'libs/_normalize';
+@import 'libs/_bootstrap-grid';
+@import 'libs/_cuisine';
+@import '_mixins';
+@import '_variables';
 
 
 
@@ -60,9 +38,9 @@ h3{font-size:28px;}
 
 
 /* Header, Footer & Button */
-@import 'header';
-@import 'footer';
-@import 'button';
+@import '_header';
+@import '_footer';
+@import '_button';
 
 
 
