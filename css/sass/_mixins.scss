@@ -7,6 +7,9 @@
 
 /** MIXINS: **/
 
+/**
+ *  CSS3:
+ */
 @mixin borderbox(){
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -36,6 +39,9 @@
  }
 
 
+/**
+ * Animations:
+ */
 @mixin keyframe ($animation_name) {
     @-webkit-keyframes $animation_name {
         @content;
@@ -83,6 +89,10 @@
   -o-animation-iteration-count: infinite;
 }
 
+
+/**
+ *  Retina images:
+ */
 @mixin image-2x($image, $width, $height) {
   @media (min--moz-device-pixel-ratio: 1.3),
          (-o-min-device-pixel-ratio: 2.6/2),
@@ -95,10 +105,10 @@
   }
 }
 
+
 /**
  * Gradients:
  */
-
 @mixin gradient( $start, $end:#fff, $direction:"horizontal" ) {
 
 
@@ -138,6 +148,9 @@
 }
 
 
+/**
+ * "Hard" gradient:
+ */
 @mixin gradient-hard( $start, $end:#fff, $direction:"horizontal" ) {
 
   @if $direction == "horizontal"{
@@ -175,4 +188,17 @@
   background:         linear-gradient(to bottom, $from 0%,$from 50%,$to 50%,$to 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
 
+}
+
+/**
+ * REM font sizes:
+ */
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
 }

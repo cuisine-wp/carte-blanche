@@ -1,4 +1,10 @@
 <?php 
+/**
+ *	Intro.php
+ *	
+ * 	Parses out a flex Intro
+ * 
+ */
 
 global $item;
 $content = $item['content'];

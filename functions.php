@@ -31,15 +31,14 @@
 				//Register all menus with Cuisine:
 				$cuisine->theme->register_menus(array('Main', 'Footer'));
 			
-				//add custom image size:
+				//add custom image sizes:
 				cb_add_image_sizes();
 
 
 				//scripts:
-				cuisine_register_script( 'site_script', 'script.js' );
-					
+				cuisine_register_script( 'site_script', 'script.js' );	
 
-				//locate_template filter:
+				//locate_template filter for Cuisine ( defaults to plugin-templates/ )
 				add_filter( 'cuisine_template_location', 'cb_template_location' );
 
 	

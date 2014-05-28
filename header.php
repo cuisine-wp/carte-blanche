@@ -21,10 +21,9 @@
 	
 	<link rel="profile" href="http://gmpg.org/xfn/11"/>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
-	<link rel="shortcut icon" href="<?php echo cuisine_template_url();?>/favicon.ico"/>
-	<link rel="apple-touch-icon" href="<?php echo cuisine_template_url();?>/images/meta-icons/apple-touch-icon.png"/>
-
+	<link rel="shortcut icon" href="<?php echo cuisine_site_url();?>/favicon.ico"/>
 	<link rel="stylesheet" href="<?php echo cuisine_template_url();?>/css/main.min.css">
+	
 	<script src="<?php echo cuisine_template_url();?>/js/libs/modernizr-2.5.3.min.js"></script>
 	<?php wp_head(); ?>
 	

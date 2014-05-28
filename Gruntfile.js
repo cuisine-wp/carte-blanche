@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     
 
-   /* concat: {
+    /*concat: {
       options: {
         separator: ';',
       },
@@ -11,8 +11,7 @@ module.exports = function(grunt) {
         src: ['assets/js/post-collection.js', 'assets/js/post-view.js', 'assets/js/post-model.js'],
         dest: 'assets/js/app.js'
       }
-    },
-  */
+    },*/
     uglify: {
       build: {
         src: 'css/main.css',

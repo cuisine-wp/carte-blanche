@@ -1,4 +1,11 @@
 <?php 
+/**
+ *	Contentarea.php
+ *
+ *	handles a flex contentarea 
+ *
+ */
+
 
 global $item;
 

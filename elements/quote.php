@@ -1,4 +1,10 @@
 <?php 
+/**
+ *	Quote.php
+ *
+ * 	Parses out a flex-quote
+ * 
+ */
 
 global $item;
 
