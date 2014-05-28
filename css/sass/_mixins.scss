@@ -6,24 +6,11 @@
 @import '_variables';
 
 /** MIXINS: **/
-@mixin gradient($color) {
-
-  background: #f8f8f8; /* Old browsers */
-  background: -moz-linear-gradient(left, #fff 0%, #fff 50%, $color 50%, $color 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fff), color-stop(50%,#fff), color-stop(50%,$color), color-stop(100%,$color)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #fff 0%,#fff 50%,$color 50%,$color 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #fff 0%,#fff 50%,$color 50%,$color 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #fff 0%,#fff 50%,$color 50%,$color 100%); /* IE10+ */
-  background: linear-gradient(to right, #fff 0%,#fff 50%,$color 50%,$color 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='$color',GradientType=1 ); /* IE6-9 */
-
-}
-
 
 @mixin borderbox(){
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 
@@ -32,5 +19,160 @@
   -moz-transition: all $time ease;
   -ms-transition: all $time ease;
   -o-transition: all $time ease;
-  transition: all $tim ease;
+  transition: all $time ease;
+}
+
+
+@mixin rotate( $degrees ) {
+  -webkit-transform: rotate(#{$degrees}deg);
+  -moz-transform: rotate(#{$degrees}deg);
+  -ms-transform: rotate(#{$degrees}deg);
+  -o-transform: rotate(#{$degrees}deg);
+  transform: rotate(#{$degrees}deg);
+
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  zoom: 1;
+ }
+
+
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes $animation_name {
+        @content;
+    }
+ 
+    @-moz-keyframes $animation_name {
+        @content;
+    }
+ 
+    @-o-keyframes $animation_name {
+        @content;
+    }
+ 
+    @keyframes $animation_name {
+        @content;
+    }
+}
+
+@mixin animation ($delay, $duration, $animation) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+ 
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: forwards;
+ 
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-fill-mode: forwards;
+ 
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: forwards;
+}
+
+@mixin animation-inifite(){
+  animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+}
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+/**
+ * Gradients:
+ */
+
+@mixin gradient( $start, $end:#fff, $direction:"horizontal" ) {
+
+
+  @if $direction == "horizontal"{
+
+    @include gradient-horizontal( $start, $end );
+
+  }@else{
+
+    @include gradient-vertical( $start, $end );
+
+  }
+
+}
+
+
+@mixin gradient-horizontal($from, $to) {
+  background-color: $to;
+  background-image: -webkit-gradient(linear, left top, right top, from($from), to($to));
+  background-image: -webkit-linear-gradient(left, $from, $to);
+  background-image:    -moz-linear-gradient(left, $from, $to);
+  background-image:     -ms-linear-gradient(left, $from, $to);
+  background-image:      -o-linear-gradient(left, $from, $to);
+  background-image:         linear-gradient(left, $from, $to);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$from}', EndColorStr='#{$to}');
+}
+
+@mixin gradient-vertical($from, $to) {
+  background-color: $to;
+  background-image: -webkit-gradient(linear, left top, right bottom, from($from), to($to));
+  background-image: -webkit-linear-gradient(top, $from, $to);
+  background-image:    -moz-linear-gradient(top, $from, $to);
+  background-image:     -ms-linear-gradient(top, $from, $to);
+  background-image:      -o-linear-gradient(top, $from, $to);
+  background-image:         linear-gradient(top, $from, $to);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$from}', EndColorStr='#{$to}');
+}
+
+
+@mixin gradient-hard( $start, $end:#fff, $direction:"horizontal" ) {
+
+  @if $direction == "horizontal"{
+
+    @include gradient-hard-horizontal( $start, $end );
+
+  }@else{
+
+    @include gradient-hard-vertical( $start, $end );
+
+  }
+
+}
+
+@mixin gradient-hard-horizontal( $from, $to ) {
+
+  background: $to;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,$from), color-stop(50%,$from), color-stop(50%,$to), color-stop(100%,$to));
+  background: -webkit-linear-gradient(left, $from 0%,$from 50%,$to 50%,$to 100%);
+  background:    -moz-linear-gradient(left, $from 0%, $from 50%, $to 50%, $to 100%);
+  background:     -ms-linear-gradient(left, $from 0%,$from 50%,$to 50%,$to 100%);
+  background:      -o-linear-gradient(left, $from 0%,$from 50%,$to 50%,$to 100%);
+  background:         linear-gradient(to right, $from 0%,$from 50%,$to 50%,$to 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+}
+
+@mixin gradient-hard-vertical( $from, $to ) {
+
+  background: $to;
+  background: -webkit-gradient(linear, top top, right top, color-stop(0%,$from), color-stop(50%,$from), color-stop(50%,$to), color-stop(100%,$to));
+  background: -webkit-linear-gradient(top, $from 0%,$from 50%,$to 50%,$to 100%);
+  background:    -moz-linear-gradient(top, $from 0%, $from 50%, $to 50%, $to 100%);
+  background:     -ms-linear-gradient(top, $from 0%,$from 50%,$to 50%,$to 100%);
+  background:      -o-linear-gradient(top, $from 0%,$from 50%,$to 50%,$to 100%);
+  background:         linear-gradient(to bottom, $from 0%,$from 50%,$to 50%,$to 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+
 }

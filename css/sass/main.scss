@@ -19,6 +19,7 @@ body{
 	font-size:16px;
 	color:$font-color;
 	font-family:$font-stack;
+	@include gradient-hard( #000, #444, "horizontal" );
 }
 
 a, a:visited{
