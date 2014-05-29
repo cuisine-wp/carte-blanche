@@ -32,7 +32,7 @@
 	<!-- Main menu + logo -->
 	<header class="mainmenu row-fluid" id="mainmenu">
 		<div class="container">
-			<?php ct_theme_logo();?>
+			<?php cb_theme_logo();?>
 			<?php if(has_nav_menu( 'main' ) ):?>
 				<?php wp_nav_menu( array( 
 							'theme_location' => 'main',

@@ -10,8 +10,6 @@
 <div class="footer row-fluid" id="footer">
 	<footer id="colophon" class="container">
 
-		<?php get_template_part( 'template', 'footer' );?>
-
 	</footer>
 </div>
 <div class="copyright fluid-row">
