@@ -9,3 +9,17 @@
   .pull-center{float:none !important;margin:0 auto 0 auto !important;}
   table{width:100%;}
   table td{padding:5px;}
+
+  .row-fluid.no-gutter [class*=span]{margin-left:0;}
+  .row-fluid.no-gutter .span1{width:8.33334%}
+  .row-fluid.no-gutter .span2{width:16.66666667%}
+  .row-fluid.no-gutter .span3{width:25.00002%}
+  .row-fluid.no-gutter .span4{width:33.33336%}
+  .row-fluid.no-gutter .span5{width:41.6667%}
+  .row-fluid.no-gutter .span6{width:50%}
+  .row-fluid.no-gutter .span7{width:58.33334%}
+  .row-fluid.no-gutter .span8{width:66.66666667%}
+  .row-fluid.no-gutter .span9{width:75%}
+  .row-fluid.no-gutter .span10{width:83.33336%}
+  .row-fluid.no-gutter .span11{width:91.6667%}
+  .row-fluid.no-gutter .span12{width:100%;}
