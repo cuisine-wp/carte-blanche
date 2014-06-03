@@ -5,7 +5,7 @@
 Carte Blanche is a WordPress boilerplate theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Bootstrap](http://getbootstrap.com/). 
 
 * Source: [https://github.com/chefduweb/carte-blanche](https://github.com/chefduweb/carte-blanche)
-* Home Page: [http://www.chefduweb.nl/carte-blanche/](http://roots.io/)
+* Home Page: [http://www.chefduweb.nl/carte-blanche/](http://www.chefduweb.nl/carte-blanche/)
 * Twitter: [@LucP](https://twitter.com/LucP)
 
 ## Installation
