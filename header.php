@@ -24,7 +24,7 @@
 	<link rel="shortcut icon" href="<?php echo cuisine_site_url();?>/favicon.ico"/>
 	<link rel="stylesheet" href="<?php echo cuisine_template_url();?>/css/main.min.css">
 	
-	<script src="<?php echo cuisine_template_url();?>/js/libs/modernizr-2.5.3.min.js"></script>
+	<script src="<?php echo cuisine_template_url();?>/js/libs/modernizr-2.8.2.min.js"></script>
 	<?php wp_head(); ?>
 	
 </head>
