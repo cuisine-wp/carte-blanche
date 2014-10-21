@@ -14,7 +14,7 @@
 </div>
 <div class="copyright fluid-row">
 	<div class="container">
-
+		<a href="http://www.chefduweb.nl" title="Website door Chef du Web" class="mustache"></a>
 	</div>
 </div>
 <?php wp_footer(); ?>

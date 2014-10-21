@@ -1,6 +1,6 @@
 /**
 * Main CSS file 
-* this is where all your imports & main styling stuff go.
+* this is where all your imports go.
 * 
 */
 
@@ -8,45 +8,19 @@
 @import 'libs/_normalize';
 @import 'libs/_bootstrap-grid';
 @import 'libs/_cuisine';
+
+/** Variables and functions */
 @import '_mixins';
 @import '_variables';
 
 
-
-/* Body & Typografie: */
-body{
-	background:#fff;
-	font-size:16px;
-	color:$font-color;
-	font-family:$font-stack;
-	@include gradient-hard( #000, #444, "horizontal" );
-}
-
-a, a:visited{
-	color:#323232;
-	text-decoration:underline;
-}
-
-h1,h2,h3,h4,h5,h6, p{
-	color:#323232;
-	font-family:$font-stack;
-}
-
-h1{font-size:44px;}
-h2{font-size:38px;}
-h3{font-size:28px;}
-
-
-
-/* Header, Footer & Button */
+/* General styling */
+@import '_general';
 @import '_header';
 @import '_footer';
 @import '_button';
 
 
+/* Per-page styling */
 
 
-/**
-*	Main content classes:
-*/
-#main{margin-top:87px;}	//account for the sticky menu...

@@ -34,8 +34,11 @@
 				//add custom image sizes:
 				cb_add_image_sizes();
 
+				//modernizr in the head:
+				$modernizr = $cuisine->theme->url( 'scripts', true ).'libs/modernizr-2.8.2.min.js';
+				wp_enqueue_script( 'modernizr', $modernizr );
 
-				//scripts:
+				//other scripts:
 				cuisine_register_script( 'site_script', 'script.js' );	
 
 				//locate_template filter for Cuisine ( defaults to plugin-templates/ )
