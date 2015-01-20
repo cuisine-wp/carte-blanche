@@ -4,12 +4,9 @@
 * 
 */
 
-/** LIBS IMPORT: */
-@import 'libs/_normalize';
-@import 'libs/_bootstrap-grid';
-@import 'libs/_cuisine';
+@import 'bourbon';
+@import 'neat';
 
-/** Variables and functions */
 @import '_mixins';
 @import '_variables';
 
@@ -20,6 +17,15 @@
 @import '_footer';
 @import '_button';
 
+
+#main{
+	@include outer-container;
+
+	.span6{
+		@include span-columns( 6 );
+		background:red;
+	}
+}
 
 /* Per-page styling */
 

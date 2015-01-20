@@ -13,22 +13,12 @@ module.exports = function(grunt) {
     sass: {                              
       dist: {                            
         options: {                       
-          style: 'expanded'
+          style: 'expanded',
+          loadPath: require('node-bourbon').includePaths,
+          loadPath: require('node-neat').includePaths
         },
         files: {                         
           'css/main.css': 'css/sass/main.scss',
-        }
-      }
-    },
-
-    compass: {
-      dist: {
-        options: {
-          cssDir: 'css',
-          sassDir: 'css/sass',
-          imagesDir: 'images',
-          javascriptsDir: 'js',
-          force: true
         }
       }
     },
@@ -42,14 +32,12 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      options: {
-        livereload: true
-      },
-      css:{
-        files: ['css/sass/*.scss'],
-        tasks: ['compass:dist']
+      css: {
+        files: 'css/sass/*.scss',
+        tasks: ['sass']
       }
     }
+
   });
 
 
@@ -57,12 +45,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Default task(s).
   grunt.registerTask('default', ['sass'] );
-  grunt.registerTask('build-css', ['sass', 'cssmin']);
+  grunt.registerTask('build', ['sass', 'cssmin']);
 
 
   grunt.registerTask('minify-js', ['concat', 'uglify']);
