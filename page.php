@@ -7,7 +7,7 @@
  */
 get_header();
 if( have_posts() ): while( have_posts() ): the_post();?>
-<div class="row-fluid page-contents">
+<div class="page-contents">
 
 </div>
 <?php
