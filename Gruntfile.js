@@ -31,6 +31,26 @@ module.exports = function(grunt) {
       }
     },
 
+    browserSync: {
+      dev: {
+        bsFiles: {
+          src : [
+            'css/*.css',
+            '*.php',
+            'templates/*.php',
+            'views/*.php',
+            'elements/*.php',
+            'js/*.js'
+          ]
+        },
+            
+        options: {
+          watchTask: true,
+          proxy: 'localhost:8888',
+        }
+      }
+    },
+
     watch: {
       css: {
         files: ['css/sass/*.scss', 'css/sass/responsive/*.scss'],
@@ -46,6 +66,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-browser-sync');
+
+
+  grunt.registerTask('responsive', ['browserSync', 'watch'] );
+  grunt.registerTask('live', ['browserSync', 'watch'] );
+
 
   // Default task(s).
   grunt.registerTask('default', ['sass'] );

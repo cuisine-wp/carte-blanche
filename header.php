@@ -23,7 +23,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11"/>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
 	<link rel="shortcut icon" href="<?php echo cuisine_site_url();?>/favicon.ico"/>
-	<link rel="stylesheet" href="<?php echo cuisine_stylesheet_url( 'css' );?>">
+	<link rel="stylesheet" href="<?php echo cuisine_template_url();?>/css/main.css">
 	
 	<?php wp_head(); ?>	
 
