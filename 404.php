@@ -1,14 +1,22 @@
-<?php get_header();?>
-<div class="fullwidth content">
-	<h1>Pagina niet gevonden.. </h1>
-	
-	<div class="navigation searchresults">
-		<strong>Geen resultaten gevonden.</strong><br/>
-		probeer een andere zoekopdracht:
-		<form role="search" method="get" id="searchform" action="<?php echo $cuisine->site_url?>">
-			<input type="text" name="s" id="s" class="searchfield" value="">
-		</form>
-		
+<?php
+/**
+ * 404.php
+ *
+ * @package Carte Blanche
+ * @since 2015
+ */
+
+global $wp;
+get_header();?>
+<div class="row-fluid page-contents">
+	<div class="row-fluid">
+		<div class="span8 offset2 page-inner">
+			<?php get_template_part( 'elements/title' );?>
+			<div class="row-fluid textual-content not-found" itemprop="description">
+				<p>We hebben de pagina "<?php echo $wp->request;?>" niet kunnen vinden... Wellicht heb je een vergissing gemaakt?</p>
+				<a href="<?php echo cuisine_site_url();?>" class="button bigbutton"><i class="fa fa-home icon-home"></i> ga naar de home pagina</a>
+			</div>
+		</div>
 	</div>	
 </div>
 <?php get_footer();?>
