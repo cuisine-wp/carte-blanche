@@ -4,29 +4,32 @@
 * 
 */
 
+//Bourbon & Neat:
 @import 'bourbon';
 @import 'neat';
 
+//Custom mixins and variables:
 @import '_mixins';
 @import '_variables';
 
 
-/* General styling */
+// General styling:
 @import '_general';
 @import '_header';
 @import '_footer';
 @import '_button';
+@import '_forms';
+@import '_textual';
 
 
-#main{
-	@include outer-container;
-
-	.span6{
-		@include span-columns( 6 );
-		background:red;
-	}
-}
-
-/* Per-page styling */
+// Template-level:
+@import '_page';
+@import '_blog';
 
 
+// Page-level:
+@import '_home';
+
+
+//Responsive:
+@import '_responsive';

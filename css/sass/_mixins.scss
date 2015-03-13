@@ -3,42 +3,16 @@
 * place global mixins here:
 * 
 */
-@import '_variables';
 
-/** MIXINS: **/
-
-/**
- *  CSS3:
- */
+/* Boxsizing shortcut: */
 @mixin borderbox(){
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-
-@mixin transition( $time ){
-  -webkit-transition: all $time ease;
-  -moz-transition: all $time ease;
-  -ms-transition: all $time ease;
-  -o-transition: all $time ease;
-  transition: all $time ease;
-}
-
-
-@mixin rotate( $degrees ) {
-  -webkit-transform: rotate(#{$degrees}deg);
-  -moz-transform: rotate(#{$degrees}deg);
-  -ms-transform: rotate(#{$degrees}deg);
-  -o-transform: rotate(#{$degrees}deg);
-  transform: rotate(#{$degrees}deg);
-
-  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
-  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
-  zoom: 1;
- }
-
- @mixin placeholder {
+/* Styling placeholders: */
+@mixin placeholder {
   &.placeholder { @content; }
   &:-moz-placeholder { @content; }
   &::-moz-placeholder { @content; }
@@ -46,65 +20,7 @@
 }
 
 
-
-/**
- * Animations:
- */
-@mixin keyframe ($animation_name) {
-    @-webkit-keyframes $animation_name {
-        @content;
-    }
- 
-    @-moz-keyframes $animation_name {
-        @content;
-    }
- 
-    @-o-keyframes $animation_name {
-        @content;
-    }
- 
-    @keyframes $animation_name {
-        @content;
-    }
-}
-
-@mixin animation ( $delay, $duration, $animation, $timing:ease ) {
-    -webkit-animation-delay: $delay;
-    -webkit-animation-duration: $duration;
-    -webkit-animation-name: $animation;
-    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
-    -webkit-animation-timing-function: $timing;
-
-    -moz-animation-delay: $delay;
-    -moz-animation-duration: $duration;
-    -moz-animation-name: $animation;
-    -moz-animation-fill-mode: forwards;
-    -moz-animation-timing-function: $timing;
- 
-    -o-animation-delay: $delay;
-    -o-animation-duration: $duration;
-    -o-animation-name: $animation;
-    -o-animation-fill-mode: forwards;
-    -o-animation-timing-function: $timing;
- 
-    animation-delay: $delay;
-    animation-duration: $duration;
-    animation-name: $animation;
-    animation-fill-mode: forwards;
-    animation-timing-function: $timing;
-}
-
-@mixin animation-inifite(){
-  animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
-}
-
-
-/**
- *  Retina images:
- */
+/* Retina images: */
 @mixin image-2x($image, $width, $height) {
   @media (min--moz-device-pixel-ratio: 1.3),
          (-o-min-device-pixel-ratio: 2.6/2),
@@ -118,51 +34,7 @@
 }
 
 
-/**
- * Gradients:
- */
-@mixin gradient( $start, $end:#fff, $direction:"horizontal" ) {
-
-
-  @if $direction == "horizontal"{
-
-    @include gradient-horizontal( $start, $end );
-
-  }@else{
-
-    @include gradient-vertical( $start, $end );
-
-  }
-
-}
-
-
-@mixin gradient-horizontal($from, $to) {
-  background-color: $to;
-  background-image: -webkit-gradient(linear, left top, right top, from($from), to($to));
-  background-image: -webkit-linear-gradient(left, $from, $to);
-  background-image:    -moz-linear-gradient(left, $from, $to);
-  background-image:     -ms-linear-gradient(left, $from, $to);
-  background-image:      -o-linear-gradient(left, $from, $to);
-  background-image:         linear-gradient(left, $from, $to);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$from}', EndColorStr='#{$to}');
-}
-
-@mixin gradient-vertical($from, $to) {
-  background-color: $to;
-  background-image: -webkit-gradient(linear, left top, right bottom, from($from), to($to));
-  background-image: -webkit-linear-gradient(top, $from, $to);
-  background-image:    -moz-linear-gradient(top, $from, $to);
-  background-image:     -ms-linear-gradient(top, $from, $to);
-  background-image:      -o-linear-gradient(top, $from, $to);
-  background-image:         linear-gradient(top, $from, $to);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$from}', EndColorStr='#{$to}');
-}
-
-
-/**
- * "Hard" gradient:
- */
+/* "Hard" gradients: */
 @mixin gradient-hard( $start, $end:#fff, $direction:"horizontal" ) {
 
   @if $direction == "horizontal"{
@@ -202,9 +74,7 @@
 
 }
 
-/**
- * REM font sizes:
- */
+/* REM font sizes: */
 @function calculateRem($size) {
   $remSize: $size / 16px;
   @return $remSize * 1rem;

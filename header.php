@@ -29,8 +29,8 @@
 
 </head>
 <body <?php body_class(); ?>>
-	<!-- Main menu + logo -->
-	<header class="mainmenu row-fluid" id="mainmenu">
+
+	<header class="mainmenu">
 		<div class="container">
 			<?php cb_theme_logo();?>
 			<?php if(has_nav_menu( 'main' ) ):?>
@@ -46,5 +46,5 @@
 	</header>
 	
 
-	<div id="main" role="main" class="row-fluid contents">
+	<div id="main" role="main">
 		<div class="container">

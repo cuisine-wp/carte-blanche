@@ -7,12 +7,10 @@
 ?>
 	</div>
 </div><!-- #main -->
-<div class="footer row-fluid" id="footer">
-	<footer id="colophon" class="container">
+<footer id="colophon">
 
-	</footer>
-</div>
-<div class="copyright fluid-row">
+</footer>
+<div class="copyright">
 	<div class="container">
 		<a href="http://www.chefduweb.nl" title="Website door Chef du Web" class="mustache"></a>
 	</div>
