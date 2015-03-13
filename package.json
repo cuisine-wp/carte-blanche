@@ -6,7 +6,7 @@
   "private": true,
   "repository" :
       { "type" : "git"
-      , "url" : "http://bitbucket.org/chefduweb/vantilt.git"
+      , "url" : "http://bitbucket.org/chefduweb/mustache.git"
       },
   "devDependencies": {
     "grunt": "~0.4.5",

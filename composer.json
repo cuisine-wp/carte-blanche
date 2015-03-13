@@ -1,8 +1,8 @@
 {
-  "name": "chefduweb/carte-blanche",
-  "description": "A modern WordPress starter theme using Sass, Grunt & Compass",
+  "name": "chefduweb/carte-blanche-bourbon",
+  "description": "A modern WordPress starter theme using Sass, Grunt & Bourbon",
   "keywords": ["wordpress", "theme", "canvas", "blank"],
-  "homepage": "http://www.chefduweb.nl/carte-blanche",
+  "homepage": "http://www.chefduweb.nl/carte-blanche-bourbon",
   "license": "GPLv3",
   "authors": [
     {

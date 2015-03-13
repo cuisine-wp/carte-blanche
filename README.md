@@ -1,16 +1,16 @@
-# [Carte Blanche Theme](http://www.chefduweb.nl/carte-blanche)
+# [Carte Blanche Bourbon Theme](http://www.chefduweb.nl/carte-blanche-bourbon)
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-Carte Blanche is a WordPress boilerplate theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Bootstrap](http://getbootstrap.com/). 
+Carte Blanche Bourbon is a WordPress boilerplate theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Bourbon](http://bourbon.io/). 
 
-* Source: [https://github.com/chefduweb/carte-blanche](https://github.com/chefduweb/carte-blanche)
-* Home Page: [http://www.chefduweb.nl/carte-blanche/](http://www.chefduweb.nl/carte-blanche/)
+* Source: [https://github.com/chefduweb/carte-blanche-bourbon](https://github.com/chefduweb/carte-blanche-bourbon)
+* Home Page: [http://www.chefduweb.nl/carte-blanche-bourbon/](http://www.chefduweb.nl/carte-blanche-bourbon/)
 * Twitter: [@LucP](https://twitter.com/LucP)
 
 ## Installation
 
-Clone the git repo - `git clone git://github.com/chefduweb/carte-blanche.git` - or [download it](https://github.com/chefduweb/carte-blanche/zipball/master) and then rename the directory to the name of your theme or website. [Install Grunt](http://gruntjs.com/getting-started), and then install the dependencies for Carte Blanche contained in `package.json` by running the following from the Carte Blanche theme directory:
+Clone the git repo - `git clone git://github.com/chefduweb/carte-blanche-bourbon.git` - or [download it](https://github.com/chefduweb/carte-blanche-bourbon/zipball/master) and then rename the directory to the name of your theme or website. [Install Grunt](http://gruntjs.com/getting-started), and then install the dependencies for Carte Blanche contained in `package.json` by running the following from the Carte Blanche theme directory:
 
 ```
 npm install
@@ -25,9 +25,11 @@ After you've installed Grunt and ran `npm install` from the theme root, use `gru
 
 * Organized file and template structure
 * HTML5 Boilerplate's markup along with ARIA roles and microformat
-* Bootstrap
+* Bourbon support
+* Bourbon Neat support
 * Grunt build script
 * Clean slate; no more deleting files.
+* Clear Sass-structure
 
 
 ## Contributing
@@ -37,4 +39,4 @@ Everyone is welcome to help contribute and improve this project. There are sever
 * Reporting issues
 * Suggesting new features
 * Writing or refactoring code
-* Fixing [issues](https://github.com/chefduweb/carte-blanche/issues)
+* Fixing [issues](https://github.com/chefduweb/carte-blanche-bourbon/issues)

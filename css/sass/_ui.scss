@@ -1,0 +1,30 @@
+/**
+* UI CSS file 
+* Everything that enables user-interaction gets bootstrapped here
+* 
+*/
+
+.button{
+
+	padding:10px 11px;
+	background:#000;
+	display:inline-block;
+	color:#fff;
+	text-decoration:none;
+	line-height:100%;
+	
+	&:hover{
+		background:#444;
+	}
+}
+
+
+.btn, a[class^="btn--"]{
+	@extend .button;
+}
+
+
+a, a:visited{
+	color:#323232;
+	text-decoration:underline;
+}

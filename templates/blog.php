@@ -1,34 +1,21 @@
 <?php 
 /**
+ * Page.php
  *
- * @package Chef Standaard
- * @since 2012
+ * @package Carte Blanche
+ * @since 2014
  */
+get_header();
+if( have_posts() ): while( have_posts() ): the_post();?>
+<div class="page-contents">
 
-	get_header();
+</div>
+<?php
 
-	global $wp_query, $style;
-?>
+endwhile;
+else:
 
-<!-- Chef_shop also creates the fluid row -->
-<?php chef_shop_sidebar_before( $style['sidebar-pos'], 'blog', 'sidebar-area' ); ?>
+	get_template_part( 'templates/not-found' );
 
-
-	<h1 class="pagetitle">Blog</h1>
-
-
-	<?php if( have_posts() ) while( have_posts() ) : the_post();?>
-
-		<?php get_template_part('plugin-templates/post', get_post_format() );?>
-
-	<?php endwhile; ?>
-	
-	<?php if( cuisine_has_plugin( 'chef-navigation' ) ):?>
-	<div class="row-fluid">
-		<?php chef_navigation();?>
-	</div>
-	<?php endif;?>
-
-<?php chef_shop_sidebar_after( $style['sidebar-pos'], 'blog', 'sidebar-area' );?>
-
-<?php get_footer();?>
+endif;
+get_footer();?>

@@ -1,0 +1,25 @@
+/**
+* Textual CSS file 
+* Styling for basic typography:
+* 
+*/
+
+h1,h2,h3,h4,h5,h6{
+	color:$font-color;
+	font-family:$head-stack;
+}
+
+p, a, span, ol, ul, li, strong, em, i, b, big, small, tt, abbr, acronym, 
+cite, code, dfn, em, kbd, samp, var, br, sub, sup, button, input, label,
+select, textarea{
+	color:$font-color;
+	font-family:$font-stack;
+}
+
+
+h1{font-size:44px;}
+h2{font-size:38px;}
+h3{font-size:28px;}
+h4{font-size:24px;}
+h5{font-size:18px;}
+h6{font-size:14px;}

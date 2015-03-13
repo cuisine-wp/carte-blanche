@@ -17,7 +17,7 @@
 @import '_general';
 @import '_header';
 @import '_footer';
-@import '_button';
+@import '_ui';
 @import '_forms';
 @import '_textual';
 
@@ -32,4 +32,7 @@
 
 
 //Responsive:
-@import '_responsive';
+@import 'responsive/_general';
+@import 'responsive/_page';
+@import 'responsive/_blog';
+@import 'responsive/_home';
