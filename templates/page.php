@@ -1,13 +1,13 @@
 <?php 
 /**
- * Single.php
+ * Page
  *
- * @package Carte Blanche
- * @since 2014
+ * @package Carte Blanche Bourbon
+ * @since 2015
  */
 get_header();
 if( have_posts() ): while( have_posts() ): the_post();?>
-<div class="single-contents">
+<div class="page-contents">
 
 </div>
 <?php
@@ -15,7 +15,7 @@ if( have_posts() ): while( have_posts() ): the_post();?>
 endwhile;
 else:
 
-	get_template_part( 'templates/not-found' );
+	get_template_part( 'views/not-found' );
 
 endif;
 get_footer();?>

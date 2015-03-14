@@ -1,9 +1,9 @@
 <?php
 /**
- * The header template file.
+ * Header template file
  *
- * @package Carte Blanche
- * @since 2014
+ * @package Carte Blanche Bourbon
+ * @since 2015
  */
 ?>
 <!doctype html>
@@ -20,13 +20,10 @@
 
 	<title><?php wp_title(); ?></title>
 	
-	<link rel="profile" href="http://gmpg.org/xfn/11"/>
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
 	<link rel="shortcut icon" href="<?php echo cuisine_site_url();?>/favicon.ico"/>
 	<link rel="stylesheet" href="<?php echo cuisine_template_url();?>/css/main.css">
 	
-	<?php wp_head(); ?>	
-
+	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 

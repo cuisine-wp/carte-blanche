@@ -1,21 +1,33 @@
 <?php 
 /**
- * Page.php
+ * Blog overview
  *
- * @package Carte Blanche
- * @since 2014
+ * @package Carte Blanche Bourbon
+ * @since 2015
  */
 get_header();
-if( have_posts() ): while( have_posts() ): the_post();?>
-<div class="page-contents">
 
-</div>
-<?php
 
-endwhile;
-else:
+	echo '<div class="overview blog">';
 
-	get_template_part( 'templates/not-found' );
+		if( have_posts() ):
 
-endif;
+			while( have_posts() ): the_post();
+?>
+
+
+
+<?php 
+
+			endwhile;
+	
+		else:
+	
+			get_template_part( 'views/not-found' );	
+	
+		endif;
+
+	echo '</div>';
+
+
 get_footer();?>

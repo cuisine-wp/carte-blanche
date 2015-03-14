@@ -1,10 +1,9 @@
 <?php
 /**
+ * Functions.php
  *
- * @package Carte Blanche
- * @since 2014
- *
- *
+ * @package Carte Blanche Bourbon
+ * @since 2015
  */
 
 
@@ -43,6 +42,9 @@
 
 				//locate_template filter for Cuisine ( defaults to plugin-templates/ )
 				add_filter( 'cuisine_template_location', 'cb_template_location' );
+
+				//get some default pages in on the template engine:
+				add_filter( 'template_include', 'cb_template_include' );
 
 	
 			}else{
@@ -83,6 +85,54 @@
 		return 'templates/';
 	}
 	
+
+
+	/**
+	 * Return files in templates/ in stead of the root folder.
+	 *
+	 * @access public
+	 * @param  String $template
+	 * @return String $template (altered)
+	 */
+	function cb_template_include( $include ){
+
+		global $wp_query, $post, $cuisine;
+		$folder = apply_filters( 'cuisine_template_location', 'templates/' );
+		$templates = array();
+
+
+		if( is_page() ){
+
+
+			$templates = array(
+
+							$folder.'page-'.$post->post_name.'.php',
+							$folder.'page.php'
+			);
+
+
+		}else if( is_404() ){
+
+			$templates = array(
+							'views/404.php',
+							$folder.'404.php'
+			);
+
+		}
+
+		//Loop through the templates and return it when found:
+		if( !empty( $templates ) ){
+			
+			$new_include = locate_template( $templates );
+			if( $new_include != '' )
+				$include = $new_include;
+
+		}
+
+
+		return $include;
+	
+	}
 
 
 

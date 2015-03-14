@@ -2,7 +2,7 @@
 /**
  * 404.php
  *
- * @package Carte Blanche
+ * @package Carte Blanche Bourbon
  * @since 2015
  */
 
