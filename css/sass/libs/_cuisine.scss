@@ -1,0 +1,63 @@
+/**
+* General Chef du Web / Cuisine styling
+* 
+*/
+* { -webkit-font-smoothing: antialiased; }
+input, textarea{outline:none;}
+
+/* set all widths: */
+html, body{width:100%;margin:0;padding:0;}
+p,a,h1,h2,h3,h4,h5,h6{margin:0;padding:0;-webkit-margin-before:0;-webkit-margin-after:0;}
+ul, ol{margin:0;}
+table{width:100%;}
+.fullwidth, .onethird, .twothird, .half, .onefourth, .onefifth, .onesixth, .twofifth{float:left;}
+.fullwidth{width:100%;}
+.onethird{width:33%;}
+.twothird{width:66%;}
+.half{width:50%;}
+.onefourth{width:25%;}
+.onefifth{width:20%;}
+.onesixth{width:16.666666667%;}
+.twofifth{width:40%;}
+.cuisine-step{display:none;}
+.step-page{float:left;margin-right:15px;}
+.pull-right{float:right;}
+.onethird.nomargin, .twothird.nomargin, .half.nomargin,.onefourth.nomargin{padding-right:0;}
+
+/* Images */
+.alignleft{float:left;margin:0 20px 20px 0;}
+.alignright{float:right;margin:0 0 20px 20px;}
+.aligncenter{margin:0 auto 20px auto;}
+.wp-caption-text{padding-bottom:20px;}
+
+/* Increase frame-rate when scrolling by not registering pointer-events:*/
+.disable-hover, .disable-hover * { pointer-events: none !important; }
+
+/* Mustache link: */
+a[class^="mustache"]{display:block;;cursor:pointer;text-transform:uppercase;float:none;position:absolute;background:url('../images/mustache.png');width:80px;height:15px;left:50%;margin-left:-40px;top:5px;opacity:1;}
+a[class^="mustache"]:hover{opacity:.5;}
+a.mustache--black{background-position:0 20px;}
+
+/* Screenreader text support: */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	
+	&:focus{
+		background-color: #f1f1f1;
+		border-radius: 3px;
+		clip: auto !important;
+		color: #21759b;
+		display: block;
+		font-size: rem( 14px );
+		height: auto;
+		left: 5px;
+		padding: 15px 23px 14px;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+}
