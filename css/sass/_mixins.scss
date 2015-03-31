@@ -4,6 +4,23 @@
 * 
 */
 
+
+//make flex rows a bit easier:
+@mixin flex-row( $equalize:stretch ){
+    @include display(flex);
+    @include flex-direction(row);
+    @include align-items($equalize);
+}
+
+//make flex columns a bit easier:
+@mixin flex-col( $equalize:stretch ){
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items($equalize);
+}
+
+
+
 /* Boxsizing shortcut: */
 @mixin borderbox(){
   -moz-box-sizing: border-box;
