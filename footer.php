@@ -16,7 +16,10 @@
 		<a href="http://www.chefduweb.nl" title="Website door Chef du Web" class="mustache"></a>
 	</div>
 </div>
+
 <?php wp_footer(); ?>
+
+<!-- analytics -->
 <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
     function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

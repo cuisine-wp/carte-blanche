@@ -18,44 +18,62 @@
 	 */
 	add_action( 'init', 'cb_init' );
 	function cb_init(){
-	
 			
-		try{
+		$locations = array(
+							'main'		=> 'Main',
+							'top'		=> 'Top',
+							'footer'	=> 'Footer',
+		);
 
-			if( class_exists( 'Cuisine' ) ){
-		
-				global $cuisine;
-				
-			
-				//Register all menus with Cuisine:
-				$cuisine->theme->register_menus(array('Main', 'Footer'));
-			
-				//add custom image sizes:
-				cb_add_image_sizes();
-
-				//modernizr in the head:
-				$modernizr = $cuisine->theme->url( 'scripts', true ).'libs/modernizr-2.8.2.min.js';
-				wp_enqueue_script( 'modernizr', $modernizr );
-
-				//other scripts:
-				cuisine_register_script( 'site_script', 'script.js' );	
-
-				//locate_template filter for Cuisine ( defaults to plugin-templates/ )
-				add_filter( 'cuisine_template_location', 'cb_template_location' );
-
-				//get some default pages in on the template engine:
-				add_filter( 'template_include', 'cb_template_include' );
+		//register the menu's with WP:
+		register_nav_menus( $locations );
 
 	
-			}else{
-				throw new Exception("Cuisine isn\'t running. Check http://www.chefduweb.nl/cuisine for more information");
-			}
+		//add custom image sizes:
+		cb_add_image_sizes();
 
-		}catch( Exception $e ){
-			//echo the error:
-			echo $e->getMessage();
+		//modernizr in the head:
+		$modernizr = cb_url( 'scripts' ).'libs/modernizr-2.8.2.min.js';
+		wp_enqueue_script( 'modernizr', $modernizr );
+
+		//all the other scripts in the footer:
+		add_action( 'wp_footer', 'cb_add_scripts' );
+
+		//find the appropriate template files:
+		add_filter( 'template_include', 'cb_template_include' );
+
+	}
+
+
+	/**
+	 * Include all extra files
+	 *
+	 * @access public
+	 * @return void
+	 */
+	function cb_includes(){
+
+		require_once( 'includes/ajax.php' );
+
+	}
+
+	cb_includes();
+
+
+	/**
+	 * Add scripts in the footer:
+	 *
+	 * @access public
+	 * @return void
+	 */
+	function cb_add_scripts(){
+
+		//ajaxurl:
+		echo '<script>var ajaxurl = "'.admin_url('admin-ajax.php').'";</script>';
 		
-		}
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'script', cb_url('scripts').'script.js' );
+
 	}
 
 
@@ -135,6 +153,43 @@
 	}
 
 
+	/**
+	 * Shorthand to the Carte Blanche url
+	 *
+	 * @access public
+	 * @return String (url)
+	 */
+	function cb_url( $type = 'base', $echo = false, $slash = true ){
+
+		$url = get_stylesheet_directory_uri();
+
+		switch( $type ){
+
+			case 'scripts':
+
+				$url .= '/js';
+				break;
+
+			case 'css':
+
+				$url .= '/css';
+				break;
+
+			case 'images':
+
+				$url .= '/images';
+				break;
+		}
+
+		if( $slash )
+			$url = trailingslashit( $url );
+
+		if( $echo )
+			echo $url;
+
+		return $url;
+	}
+
 
 	/****************************************************/
 	/** CUSTOM THEME FUNCTIONS **************************/
@@ -150,20 +205,14 @@
 	 */
 	function cb_theme_logo(){
 	
-		$options = cuisine_get_theme_style();
-		$html = '<a class="logo" href="'.cuisine_site_url().'">';
-		
-		if( isset( $options['logo-image'] ) && $options['logo-image'] != 'none' && $options['logo-image'] != '' )
-			$html .= '<img src="'.$options['logo-image'].'"/>';
-		
-	
-		if( isset( $options['logo-show-text'] ) && $options['logo-show-text'] == '1')
-			$html .= '<h1>'.get_bloginfo( 'name', 'raw' ).'</h1>';
-	
+		$html = '<a class="logo" href="'.get_site_url().'">';
+			$html .= '<h1>'.get_bloginfo( 'name', 'raw' ).'</h1>';	
 		$html .= '</a>';
 	
 		echo $html;
 	}
+
+
 
 	show_admin_bar( false );
 

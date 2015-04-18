@@ -14,7 +14,7 @@ get_header();?>
 			<?php get_template_part( 'elements/title' );?>
 			<div class="row-fluid textual-content not-found" itemprop="description">
 				<p>We hebben de pagina "<?php echo $wp->request;?>" niet kunnen vinden... Wellicht heb je een vergissing gemaakt?</p>
-				<a href="<?php echo cuisine_site_url();?>" class="button bigbutton"><i class="fa fa-home icon-home"></i> ga naar de home pagina</a>
+				<a href="<?php echo get_site_url();?>" class="button bigbutton"><i class="fa fa-home icon-home"></i> ga naar de home pagina</a>
 			</div>
 		</div>
 	</div>	
