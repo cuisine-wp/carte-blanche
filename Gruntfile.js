@@ -7,8 +7,8 @@ module.exports = function(grunt) {
     
         uglify: {
             build: {
-                src: 'assets/css/app.css',
-                dest: 'assets/css/app.min.css'
+                src: 'css/main.css',
+                dest: 'css/main.min.css'
             }
         },
 
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                     loadPath: require('node-neat').includePaths
                 },
                 files: {
-                    'assets/css/app.css': 'sass/app.scss'
+                    'css/main.css': 'css/sass/main.scss'
                 }
             }
         },
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'assets/css/app.min.css': 'assets/css/app.css'
+                    'css/main.min.css': 'css/main.css'
                 }
             }
         },
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
             dev: {
                 bsFiles: {
                     src : [
-                        'assets/css/*.css',
+                        'css/*.css',
                         'templates/**/*.php',
                         'scripts/*.js',
                         'scripts/**/*.js'
@@ -47,14 +47,14 @@ module.exports = function(grunt) {
             
                 options: {
                     watchTask: true,
-                    proxy: '<%= pkg.appUrl %>',
+                    proxy: 'localhost:8888',
                 }
             }
         },
 
         watch: {
             css: {
-                files: ['sass/*.scss', 'sass/**/*.scss'],
+                files: ['css/sass/*.scss', 'css/sass/**/*.scss'],
                 tasks: ['sass']
             }
         }
