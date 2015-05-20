@@ -10,27 +10,29 @@
 @import 'libs/_normalize';
 @import 'libs/_cuisine';
 
-//Custom mixins and variables:
-@import '_mixins';
+//Custom variables:
 @import '_variables';
 
 
+//Core styling:
+@import 'core/_mixins';
+@import 'core/_grid';
+@import 'core/_typography';
+@import 'core/_general';
+@import 'core/_ui';
+@import 'core/_forms';
+
+
 // General styling:
-@import '_general';
 @import '_header';
 @import '_footer';
-@import '_ui';
-@import '_forms';
 @import '_textual';
 
 
-// Template-level:
-@import '_page';
-@import '_blog';
-
-
-// Page-level:
-@import '_home';
+// Templates:
+@import 'templates/_page';
+@import 'templates/_blog';
+@import 'templates/_home';
 
 
 //Responsive:

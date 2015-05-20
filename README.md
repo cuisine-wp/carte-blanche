@@ -1,16 +1,16 @@
-# [Carte Blanche Bourbon Theme](http://www.chefduweb.nl/carte-blanche-bourbon)
+# [Carte Blanche Theme](http://www.chefduweb.nl/carte-blanche)
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-Carte Blanche Bourbon is a WordPress boilerplate theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Bourbon](http://bourbon.io/). 
+Carte Blanche is a WordPress boilerplate theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Bourbon](http://bourbon.io/). 
 
-* Source: [https://github.com/chefduweb/carte-blanche-bourbon](https://github.com/chefduweb/carte-blanche-bourbon)
-* Home Page: [http://www.chefduweb.nl/carte-blanche-bourbon/](http://www.chefduweb.nl/carte-blanche-bourbon/)
+* Source: [https://github.com/chefduweb/carte-blanche](https://github.com/chefduweb/carte-blanche)
+* Home Page: [http://www.chefduweb.nl/carte-blanche/](http://www.chefduweb.nl/carte-blanche/)
 * Twitter: [@LucP](https://twitter.com/LucP)
 
 ## Installation
 
-Clone the git repo - `git clone git://github.com/chefduweb/carte-blanche-bourbon.git` - or [download it](https://github.com/chefduweb/carte-blanche-bourbon/zipball/master) and then rename the directory to the name of your theme or website. [Install Grunt](http://gruntjs.com/getting-started), and then install the dependencies for Carte Blanche contained in `package.json` by running the following from the Carte Blanche theme directory:
+Clone the git repo - `git clone git://github.com/chefduweb/carte-blanche.git` - or [download it](https://github.com/chefduweb/carte-blanche/zipball/master) and then rename the directory to the name of your theme or website. [Install Grunt](http://gruntjs.com/getting-started), and then install the dependencies for Carte Blanche contained in `package.json` by running the following from the Carte Blanche theme directory:
 
 ```
 npm install
@@ -39,4 +39,4 @@ Everyone is welcome to help contribute and improve this project. There are sever
 * Reporting issues
 * Suggesting new features
 * Writing or refactoring code
-* Fixing [issues](https://github.com/chefduweb/carte-blanche-bourbon/issues)
+* Fixing [issues](https://github.com/chefduweb/carte-blanche/issues)
