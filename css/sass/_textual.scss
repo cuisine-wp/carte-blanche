@@ -1,25 +1,69 @@
-/**
-* Textual CSS file 
-* Styling for basic typography:
-* 
-*/
+.textual-content{
 
-h1,h2,h3,h4,h5,h6{
-	color:$font-color;
-	font-family:$head-stack;
+	h1, h2, h3, h4, h5, h6, p{
+		margin-top:0;
+		margin-bottom:0;
+		padding-bottom:30px;
+	}
+
+
+	ul, ol{
+		padding-left:20px;
+		margin-left:0;
+	}
+
+
+	p{
+		line-height:135%;
+	}
+
+
+	img{
+		max-width:100%;
+		height:auto;
+
+		&.size-full, &.size-large{
+			width:100%;
+		}
+
+		&.size-medium{
+			width:45%;
+		}
+	}
+
+	.wp-caption{
+		max-width:100% !important;
+
+		p{
+			font-size: rem( 16px );
+			display:block;
+			text-align:center;
+		}
+
+	}
+
+	.intro{
+
+		padding-bottom:15px;
+
+		p, strong, i, li, span, a{
+			font-size: rem( 20px );
+			line-height:150%;
+			padding-bottom:15px;
+		}
+
+	}
+
+
+	blockquote{
+		position:relative;
+
+		p, i, li, span, a{
+
+			font-size: rem( 24px );
+			font-style:italic;
+			font-family:$serif;
+
+		}
+	}
 }
-
-p, a, span, ol, ul, li, strong, em, i, b, big, small, tt, abbr, acronym, 
-cite, code, dfn, em, kbd, samp, var, br, sub, sup, button, input, label,
-select, textarea{
-	color:$font-color;
-	font-family:$font-stack;
-}
-
-
-h1{font-size:44px;}
-h2{font-size:38px;}
-h3{font-size:28px;}
-h4{font-size:24px;}
-h5{font-size:18px;}
-h6{font-size:14px;}

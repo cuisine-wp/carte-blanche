@@ -25,6 +25,21 @@ module.exports = function(grunt) {
             }
         },
 
+        sass_globbing: {
+            
+            your_target: {
+              
+              files: {
+                'css/sass/plugins/_plugins.scss': 'css/sass/plugins/*.scss'
+              },
+
+              options: {
+                useSingleQuotes: false
+              }
+
+            }
+        },
+
         cssmin: {
             combine: {
                 files: {
@@ -55,7 +70,7 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: ['css/sass/*.scss', 'css/sass/**/*.scss'],
-                tasks: ['sass']
+                tasks: ['sass_globbing', 'sass']
             }
         }
     });
@@ -63,8 +78,9 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-watch')
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass-globbing');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-browser-sync');
 
@@ -72,7 +88,7 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['sass'] );
     grunt.registerTask('live', ['browserSync', 'watch'] );
-    grunt.registerTask('build', ['sass', 'cssmin']);
+    grunt.registerTask('build', ['sass_globbing', 'sass', 'cssmin']);
     
     grunt.registerTask('minify-js', ['concat', 'uglify']);
     grunt.registerTask('minify-css', ['concat'])
