@@ -8,7 +8,7 @@
 	
 	namespace CarteBlanche;
 
-	use Cuisine\Wrappers\Scripts;
+	use Cuisine\Wrappers\Script;
 	use Cuisine\Utilities\Url;
 	use Cuisine\View\Image;
 	use Cuisine\View\Nav;
@@ -37,8 +37,8 @@
 			wp_enqueue_script( 'modernizr', $modernizr );
 			
 			//register the scripts
-			Scripts::register( 'jquery', Url::wp( 'jquery/jquery' ), true );
-			Scripts::register( 'theme', Url::theme( 'js' ).'/script', true );
+			Script::register( 'jquery', Url::wp( 'jquery/jquery' ), true );
+			Script::register( 'theme', Url::theme( 'js' ).'/script', true );
 	
 
 
