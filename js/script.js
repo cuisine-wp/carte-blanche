@@ -1,6 +1,7 @@
 define([
 	
-	'jquery'
+	'jquery',
+	'social-share',
 
 ], function( $ ){
 
@@ -12,9 +13,7 @@ define([
 	$( document ).ready( function(){
 	
 		setMenu();
-	
-		shareEvents();
-	
+		
 	});
 	
 	
@@ -114,45 +113,4 @@ define([
 	
 	}
 	
-	
-	
-	/**
-	 * Events for the share-buttons
-	 * @return void
-	 */
-	function shareEvents(){
-	
-		$('.post-counter').click(function( e ){
-	
-	        e.preventDefault;
-	
-	        if( ! $(this).hasClass('post-comments') ){
-	
-	
-	            var type = $(this).data('type');
-	            var count = parseInt( $(this).data('count') );
-	            var pid = $(this).data('postid');
-	
-	            var obj = $(this);
-	            var data = {
-	                action: 'social_share',
-	                postid: pid,
-	                type: type,
-	            };
-	            
-	            window.open( obj.data('href'), '_blank', 'width=626,height=300' );
-	
-	            //post with ajax:
-	            $.post( ajaxurl, data, function(response) {
-	
-	                if(response != 0 && response != ''){
-	                    obj.find('p').html( count + 1 );
-	                }
-	
-	            });
-	
-	        }
-	    });
-	}
-
 });

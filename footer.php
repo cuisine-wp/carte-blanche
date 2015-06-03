@@ -1,21 +1,26 @@
 <?php
 /**
- * Footer template file
+ * Footer file
  *
  * @package Carte Blanche Bourbon
  * @since 2015
  */
 
 use Cuisine\Wrappers\Scripts;
+use Cuisine\View\Template;
 ?>
 	</div>
 </div><!-- #main -->
+
 <footer id="colophon">
 
 </footer>
+
 <div class="copyright">
 	<div class="container">
-		<a href="http://www.chefduweb.nl" title="Website door Chef du Web" class="mustache"></a>
+
+		<?php Template::mustache();?>
+	
 	</div>
 </div>
 
@@ -25,5 +30,5 @@ use Cuisine\Wrappers\Scripts;
     Scripts::set(); 
     Scripts::analytics( 'UA-XXXXX-X' );
 
-?>
-</html>
+
+?></html>

@@ -1,6 +1,6 @@
 <?php 
 /**
- * Index
+ * Detail
  *
  * @package Carte Blanche
  * @since 2015
@@ -10,27 +10,27 @@
 
 
 	Template::header();
-	
-	echo '<div class="overview contents">';
-	
+		
+	echo '<div class="detail contents">';
+		
 		if( have_posts() ):
-	
+		
 			while( have_posts() ): the_post();
 
 
+		
 
 
-	
 			endwhile;
-		
+			
 		else:
-		
+			
 			Template::notFound();
-		
+			
 		endif;
-	
+		
 	echo '</div>';
-	
+		
 	Template::footer();
 
 

@@ -2,30 +2,32 @@
 /**
  * Page titles
  *
- * @package Carte Blanche Bourbon
+ * @package Carte Blanche
  * @since 2015
  */
+
+use Cuisine\View\Loop;
+use Cuisine\View\Template;
 
 
 echo '<h1 class="title" itemprop="name">';
 
-
 	if( is_single() || is_page() ){
-		the_title();
 
-		if( get_post_type() == 'post' )
-			get_template_part( 'elements/date' );
+		echo Loop::title();
 
-			
-	}else if( get_post_type() == 'agenda' ){
-		echo 'Agenda';
+		if( Loop::type() == 'post' )
+			Template::date();
 
 	}else if( is_404() ){
+
 		echo 'Pagina niet gevonden...';
 			
 	}else{
+
 	
 	}
 
+echo '</h1>';
 
-echo '</h1>';?>
+

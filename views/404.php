@@ -1,22 +1,29 @@
-<?php
+<?php 
 /**
- * 404.php
+ * 404
  *
- * @package Carte Blanche Bourbon
+ * @package Carte Blanche
  * @since 2015
  */
+	
+	global $wp;
+	use Cuisine\View\Template;
+	use Cuisine\View\Loop;
 
-global $wp;
-get_header();?>
-<div class="row-fluid page-contents">
-	<div class="row-fluid">
-		<div class="span8 offset2 page-inner">
-			<?php get_template_part( 'elements/title' );?>
-			<div class="row-fluid textual-content not-found" itemprop="description">
-				<p>We hebben de pagina "<?php echo $wp->request;?>" niet kunnen vinden... Wellicht heb je een vergissing gemaakt?</p>
-				<a href="<?php echo get_site_url();?>" class="button bigbutton"><i class="fa fa-home icon-home"></i> ga naar de home pagina</a>
-			</div>
-		</div>
-	</div>	
-</div>
-<?php get_footer();?>
+
+	Template::header();
+		
+	echo '<div class="detail page-not-found contents">';
+		
+		echo '<h1>404 - Niet gevonden</h1>';
+
+		echo '<p>We hebben de pagina "'.$wp->request.'" niet kunnen vinden...';
+		echo 'Wellicht heb je een vergissing gemaakt?</p>';
+
+		$txt = '<i class="fa fa-home icon-home"></i> ga naar de home pagina';
+		Loop::button( get_site_url(), $txt );
+		
+	echo '</div>';
+		
+	Template::footer();
+

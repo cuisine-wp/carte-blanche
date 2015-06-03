@@ -1,6 +1,6 @@
 <?php 
 /**
- * Index
+ * Overview
  *
  * @package Carte Blanche
  * @since 2015

@@ -2,16 +2,14 @@
 /**
  * Yoast Breadcrumb inclusion
  *
- * @package Carte Blanche Bourbon
+ * @package Carte Blanche
  * @since 2015
  */
 
-if ( function_exists('yoast_breadcrumb') ) {
+echo '<div class="row breadcrumbs" id="breadcrumbs">';
 
-	echo '<div class="row breadcrumbs" id="breadcrumbs">';
+	yoast_breadcrumb('<p itemprop="breadcrumb">','</p>');
 
-		yoast_breadcrumb('<p itemprop="breadcrumb">','</p>');
+echo '</div>';
 
-	echo '</div>';
 
-}?>

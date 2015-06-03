@@ -2,20 +2,35 @@
 /**
  * Page
  *
- * @package Carte Blanche Bourbon
+ * @package Carte Blanche
  * @since 2015
  */
-get_header();
-if( have_posts() ): while( have_posts() ): the_post();?>
-<div class="page-contents">
 
-</div>
-<?php
+	use Cuisine\View\Template;
 
-endwhile;
-else:
 
-	get_template_part( 'views/not-found' );
+	Template::header();
+		
+	echo '<div class="detail page contents">';
+		
+		if( have_posts() ):
+		
+			while( have_posts() ): the_post();
 
-endif;
-get_footer();?>
+
+
+
+		
+			endwhile;
+			
+		else:
+			
+			Template::notFound();
+			
+		endif;
+		
+	echo '</div>';
+		
+	Template::footer();
+
+
