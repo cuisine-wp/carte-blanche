@@ -6,7 +6,7 @@
  * @since 2015
  */
 
-use Cuisine\Wrappers\Scripts;
+use Cuisine\Wrappers\Script;
 use Cuisine\View\Template;
 ?>
 	</div>
@@ -27,8 +27,8 @@ use Cuisine\View\Template;
 <?php 
     
     //scripts at the bottom
-    Scripts::set(); 
-    Scripts::analytics( 'UA-XXXXX-X' );
+    Script::set(); 
+    Script::analytics( 'UA-XXXXX-X' );
 
 
 ?></html>
