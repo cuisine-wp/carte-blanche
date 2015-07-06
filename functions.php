@@ -25,7 +25,7 @@
 		/**           Navigation                */
 		/****************************************/
 
-			Nav::register( array( 'Main', 'Top', 'Footer' ) );
+			Nav::register( array( 'Main', 'Top', 'Footer', 'Mobile' ) );
 
 
 		/****************************************/

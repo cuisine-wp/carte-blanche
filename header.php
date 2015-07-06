@@ -32,6 +32,9 @@ use Cuisine\View\Nav;
 				<?php Template::logo();?>
 				<?php Nav::display( 'main' );?>
 		
+				<?php Nav::display( 'mobile' );?>
+				<?php Nav::mobileToggle();?>
+
 			</div>		
 		</header>
 
