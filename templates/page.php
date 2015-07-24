@@ -18,7 +18,8 @@
 			while( have_posts() ): the_post();
 
 
-
+				echo '<h1>'.Loop::title().'</h1>';
+				echo Loop::sections();
 
 		
 			endwhile;
