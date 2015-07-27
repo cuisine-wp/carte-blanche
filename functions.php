@@ -28,18 +28,17 @@
 			Nav::register( array( 'Main', 'Top', 'Footer', 'Mobile' ) );
 
 
-		/****************************************/
-		/**           Scripts                   */
-		/****************************************/
+			/****************************************/
+			/**           Scripts                   */
+			/****************************************/
 
 			//modernizr in the head:
 			$modernizr = Url::theme( 'libs' ).'/modernizr-2.8.2.min.js';
 			wp_enqueue_script( 'modernizr', $modernizr );
-			
+				
 			//register the scripts
 			Script::register( 'jquery', Url::wp( 'jquery/jquery' ), true );
 			Script::register( 'theme', Url::theme( 'js' ).'/script', true );
-	
 
 
 		/****************************************/
@@ -53,6 +52,26 @@
 			Image::addSize( 'billboard', 265, 460 );
 
 	});
+
+
+
+
+
+	/**
+	 * Overwrite your JS files here;
+	 *
+	 * @access public
+	 * @return void
+	 */
+	add_filter( 'cuisine_scripts', function( $scripts ){
+
+		
+
+		return $scripts;
+	
+	});
+
+
 
 
 
