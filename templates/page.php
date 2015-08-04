@@ -7,6 +7,7 @@
  */
 
 	use Cuisine\View\Template;
+	use Cuisine\View\Loop;
 
 
 	Template::header();

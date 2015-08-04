@@ -3,3 +3,5 @@ node_modules
 .sass-cache
 css/*.css
 css/*.css.map
+css/sass/plugins/*
+!css/sass/plugins/_plugins.scss
