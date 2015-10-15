@@ -18,6 +18,14 @@ body{
 	font-family:$font-stack;
 }
 
+/**
+ * firefox hack for flexbox
+ */
+*{
+	min-height:0;
+	min-width:0;
+}
+
 
 /**
  * General Classes:
