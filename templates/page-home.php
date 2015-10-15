@@ -9,7 +9,6 @@
 	use Cuisine\View\Loop;
 	use Cuisine\View\Template;
 
-
 	Template::header();
 		
 	echo '<div class="detail home-page contents">';
