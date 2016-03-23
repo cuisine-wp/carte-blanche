@@ -21,6 +21,8 @@
 	 */
 	add_action( 'init', function(){
 		
+		if( class_exists( 'Cuisine' ) ){
+
 		/****************************************/
 		/**           Navigation                */
 		/****************************************/
@@ -56,8 +58,10 @@
 			Image::addSize( 'tile', 350, 350 );
 			Image::addSize( 'billboard', 265, 460 );
 
+		}
 
 	});
+
 
 
 

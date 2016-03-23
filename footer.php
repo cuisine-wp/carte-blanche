@@ -13,7 +13,7 @@ use Cuisine\View\Template;
 </div><!-- #main -->
 
 <footer id="colophon">
-
+	<?php Template::section( 'stenciltestje' );?> 
 </footer>
 
 <div class="copyright">
