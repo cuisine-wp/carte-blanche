@@ -9,7 +9,7 @@
 	use Cuisine\Wrappers\Share;
 
 
-	echo '<div class="share-buttons">';
+	echo '<div itemscope itemtype="http://schema.org/SocialMediaPosting" class="share-buttons">';
 
 		echo Share::twitter();
 		echo Share::facebook();

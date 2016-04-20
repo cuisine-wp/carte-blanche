@@ -10,7 +10,7 @@ use Cuisine\View\Loop;
 use Cuisine\View\Template;
 
 
-echo '<h1 class="title" itemprop="name">';
+echo '<h1 class="title" itemscope itemtype="http://schema.org/Thing" itemprop="name">';
 
 	if( is_single() || is_page() ){
 

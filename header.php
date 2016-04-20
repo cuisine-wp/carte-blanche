@@ -10,7 +10,7 @@ use Cuisine\View\Template;
 use Cuisine\View\Nav;
 ?>
 <!doctype html>
-<html class="no-js" lang="">
+<html itemscope itemtype="http://schema.org/WebSite" class="no-js" lang="">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -26,7 +26,7 @@ use Cuisine\View\Nav;
 	</head>
 	<body <?php body_class(); ?>>
 
-		<header class="mainmenu">
+		<header class="mainmenu" itemscope itemtype="http://schema.org/WPHeader">
 			<div class="container">
 
 				<?php Template::logo();?>
