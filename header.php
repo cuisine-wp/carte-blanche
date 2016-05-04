@@ -20,6 +20,12 @@ use Cuisine\View\Nav;
 		<meta name="HandheldFriendly" content="true">
 		<meta charset="<?php bloginfo( 'charset' ); ?>"/>
 
+		<span itemscope itemtype="http://schema.org/Organization">
+			<meta itemprop="name" content="<?php echo get_bloginfo( 'name' );?>">
+			<meta itemprop="url" content="<?php echo get_bloginfo( 'url' );?>">
+			<meta itemprop="logo" content="<?php echo get_stylesheet_directory_uri();?>/images/logo.png">
+		</span>
+		
 		<?= Template::favicon();?>
 		<?= Template::stylesheet( 'main.css' );?>
 		<?php wp_head();?>

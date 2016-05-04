@@ -11,14 +11,14 @@
 
 	Template::header();
 		
-	echo '<div class="detail home-page contents" itemscope itemtype="http://schema.org/webPage" itemprop="mainContentOfPage">';
+	echo '<div class="detail home-page contents" itemprop="mainContentOfPage">';
 		
 		if( have_posts() ):
 		
 			while( have_posts() ): the_post();
 	
 
-				echo '<h1 itemscope itemtype="http://schema.org/Thing" itemprop="name">'.Loop::title().'</h1>';
+				echo '<h1 itemprop="title">'.Loop::title().'</h1>';
 				echo Loop::sections();
 
 				Template::share();

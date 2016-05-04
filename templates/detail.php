@@ -18,7 +18,7 @@
 			while( have_posts() ): the_post();
 
 
-				echo '<h1 itemscope itemtype="http://schema.org/Thing" itemprop="name">'.Loop::title().'</h1>';
+				echo '<h1 itemprop="title">'.Loop::title().'</h1>';
 				echo Loop::content();
 
 				Template::share();
