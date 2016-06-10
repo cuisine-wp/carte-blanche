@@ -124,6 +124,11 @@
 
 }
 
+@mixin break-container(){
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
 /* REM font sizes: */
 @function calculateRem($size) {
   $remSize: $size / 16px;
