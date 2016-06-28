@@ -13,7 +13,7 @@
 
 	Template::header();
 		
-	echo '<div class="detail page-not-found contents">';
+	echo '<div class="detail page-not-found contents" itemscope itemtype="http://schema.org/webPage" itemprop="mainContentOfPage">';
 		
 		echo '<h1>404 - Niet gevonden</h1>';
 

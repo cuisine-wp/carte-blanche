@@ -12,17 +12,19 @@ use Cuisine\View\Template;
 	</div>
 </div><!-- #main -->
 
-<footer id="colophon">
+<footer class="footer" id="colophon" itemscope itemtype="http://schema.org/WPFooter">
 	<?php Template::section( 'stenciltestje' );?> 
-</footer>
 
-<div class="copyright">
-	<div class="container">
 
-		<?php Template::mustache();?>
-	
+	<div itemscope itemtype="http://schema.org/WebSite" itemprop="copyrightHolder" class="copyright">
+		<div class="container">
+
+			<?php Template::mustache();?>
+		
+		</div>
 	</div>
-</div>
+
+</footer>
 
 <?php 
     
