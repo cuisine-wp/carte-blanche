@@ -30,7 +30,7 @@ module.exports = function(grunt) {
             your_target: {
               
               files: {
-                'css/sass/plugins/_plugins.scss': 'css/sass/plugins/*.scss'
+                'css/sass/vendors/_plugins.scss': 'css/sass/vendors/*.scss'
               },
 
               options: {

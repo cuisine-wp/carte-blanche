@@ -40,7 +40,7 @@
 			/****************************************/
 
 			//modernizr in the head:
-			$modernizr = Url::theme( 'libs' ).'/modernizr-2.8.2.min.js';
+			$modernizr = Url::theme( 'vendors' ).'/modernizr-2.8.2.min.js';
 			wp_enqueue_script( 'modernizr', $modernizr );
 				
 			//register the scripts
