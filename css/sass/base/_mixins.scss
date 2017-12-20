@@ -5,70 +5,12 @@
 */
 
 
-//make flex rows a bit easier:
-@mixin flex-row( $equalize:stretch ){
-    @include display(flex);
-    @include flex-direction(row);
-    @include align-items($equalize);
-}
-
-//make flex columns a bit easier:
-@mixin flex-col( $equalize:stretch ){
-    @include display(flex);
-    @include flex-direction(column);
-    @include align-items($equalize);
-}
-
-
-
 /* Boxsizing shortcut: */
 @mixin borderbox(){
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-
-/* Transform shortcuts */
-
-// rotate
-@mixin rotate( $deg ) {
-  @include transform( rotate( #{$deg}deg ) );
-}
- 
-// scale
-@mixin scale( $scale ) {
-   @include transform( scale( $scale ) );
-} 
-
-// translate
-@mixin translate( $x, $y ) {
-   @include transform( translate( $x, $y ) );
-}
-
-// skew
-@mixin skew( $x, $y ) {
-   @include transform( skew( #{$x}deg, #{$y}deg ) );
-}
-
-//transform origin
-@mixin transform-origin( $origin ) {
-    moz-transform-origin: $origin;
-       -o-transform-origin: $origin;
-      -ms-transform-origin: $origin;
-  -webkit-transform-origin: $origin;
-          transform-origin: $origin;
-}
-
-
-/* Styling placeholders: */
-@mixin placeholder {
-  &.placeholder { @content; }
-  &:-moz-placeholder { @content; }
-  &::-moz-placeholder { @content; }
-  &::-webkit-input-placeholder { @content; }
-}
-
 
 /* Retina images: */
 @mixin image-2x($image, $width, $height) {
@@ -100,28 +42,15 @@
 }
 
 @mixin gradient-hard-horizontal( $from, $to ) {
-
   background: $to;
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,$from), color-stop(50%,$from), color-stop(50%,$to), color-stop(100%,$to));
-  background: -webkit-linear-gradient(left, $from 0%,$from 50%,$to 50%,$to 100%);
-  background:    -moz-linear-gradient(left, $from 0%, $from 50%, $to 50%, $to 100%);
-  background:     -ms-linear-gradient(left, $from 0%,$from 50%,$to 50%,$to 100%);
-  background:      -o-linear-gradient(left, $from 0%,$from 50%,$to 50%,$to 100%);
-  background:         linear-gradient(to right, $from 0%,$from 50%,$to 50%,$to 100%);
+  background:  linear-gradient(to right, $from 0%,$from 50%,$to 50%,$to 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
 }
 
 @mixin gradient-hard-vertical( $from, $to ) {
-
   background: $to;
-  background: -webkit-gradient(linear, top top, right top, color-stop(0%,$from), color-stop(50%,$from), color-stop(50%,$to), color-stop(100%,$to));
-  background: -webkit-linear-gradient(top, $from 0%,$from 50%,$to 50%,$to 100%);
-  background:    -moz-linear-gradient(top, $from 0%, $from 50%, $to 50%, $to 100%);
-  background:     -ms-linear-gradient(top, $from 0%,$from 50%,$to 50%,$to 100%);
-  background:      -o-linear-gradient(top, $from 0%,$from 50%,$to 50%,$to 100%);
-  background:         linear-gradient(to bottom, $from 0%,$from 50%,$to 50%,$to 100%);
+  background: linear-gradient(to bottom, $from 0%,$from 50%,$to 50%,$to 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
-
 }
 
 @mixin break-container(){
@@ -138,10 +67,4 @@
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
-}
-
-//reset omega-settings by bourbon:
-@mixin omega-reset($nth) {
-  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
-  &:nth-child(#{$nth}+1) { clear: none }
 }

@@ -4,36 +4,37 @@
 * 
 */
 
-//Bourbon, Neat and other dependancies:
-@import 'bourbon';
-@import 'neat';
-@import 'vendors/_normalize';
-@import 'vendors/_cuisine';
+//normalize
+@import 'vendors/normalize';
 
 //Custom variables:
-@import 'base/_variables';
+@import 'variables';
 
 //Core styling:
-@import 'base/_mixins';
-@import 'base/_ally';
-@import 'base/_forms';
-@import 'base/_grid';
-@import 'base/_textual';
-@import 'base/_typography';
-@import 'base/_ui';
+@import 'base/mixins';
+@import 'base/a11y';
+@import 'base/forms';
+@import 'base/grid';
+@import 'base/typography';
+@import 'base/textual';
+@import 'base/ui';
 
 //all plugin styles:
-@import 'vendors/_plugins';
-
+@import 'vendors/plugins';
 
 // Templates:
-@import 'pages/_footer';
-@import 'pages/_general';
-@import 'pages/_header';
-@import 'pages/_nav';
+@import 'layout/footer';
+@import 'layout/general';
+@import 'layout/header';
+@import 'layout/nav';
+
+//Pages:
+@import 'pages/page';
+@import 'pages/home';
+@import 'pages/blog';
 
 //Responsive:
-@import 'responsive/_base';
-@import 'responsive/_components';
-@import 'responsive/_layout';
-@import 'responsive/_page';
+@import 'responsive/base';
+@import 'responsive/components';
+@import 'responsive/layout';
+@import 'responsive/page';

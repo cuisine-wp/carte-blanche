@@ -2,11 +2,6 @@
 /* Increase frame-rate when scrolling by not registering pointer-events:*/
 .disable-hover, .disable-hover * { pointer-events: none !important; }
 
-/* Mustache link: */
-a[class^="mustache"]{ display:block;;cursor:pointer;text-transform:uppercase;float:none;position:absolute;background:url('../images/mustache.png');width:80px;height:15px;left:50%;margin-left:-40px;top:5px;opacity:1;}
-a[class^="mustache"]:hover{ opacity:.5;}
-a.mustache--black{ background-position:0 20px;}
-
 /* Screenreader text support: */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
@@ -19,7 +14,7 @@ a.mustache--black{ background-position:0 20px;}
 		background-color: $white;
 		border-radius: 3px;
 		clip: auto !important;
-		color: $firstColor;
+		color: $primaryColor;
 		display: block;
 		font-size: rem( 14px );
 		height: auto;

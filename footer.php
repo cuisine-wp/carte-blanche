@@ -13,14 +13,9 @@ use Cuisine\View\Template;
 </div><!-- #main -->
 
 <footer class="footer" id="colophon" itemscope itemtype="http://schema.org/WPFooter">
-	<?php Template::section( 'stenciltestje' );?> 
-
 
 	<div itemscope itemtype="http://schema.org/WebSite" itemprop="copyrightHolder" class="copyright">
-		<div class="container">
-
-			<?php Template::mustache();?>
-		
+		<div class="container">		
 		</div>
 	</div>
 
@@ -31,6 +26,5 @@ use Cuisine\View\Template;
     //scripts at the bottom
     Script::set(); 
     Script::analytics( 'UA-XXXXX-X' );
-
 
 ?></html>

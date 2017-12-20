@@ -20,7 +20,7 @@
 
 
 				echo '<h1 itemprop="title">'.Loop::title().'</h1>';
-				echo Loop::sections();
+				the_sections();
 
 		
 			endwhile;

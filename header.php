@@ -6,19 +6,19 @@
  * @since 2015
  */
 
-use Cuisine\View\Template;
-use Cuisine\View\Nav;
+use CarteBlanche\Template;
+use CarteBlanche\Nav;
 ?>
 <!doctype html>
-<html itemscope itemtype="http://schema.org/WebSite" class="no-js" lang="">
+<html itemscope itemtype="http://schema.org/WebSite" lang="en_EN">
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
 		<title><?php Template::pageTitle();?></title>
-		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="HandheldFriendly" content="true">
 		<meta charset="<?php bloginfo( 'charset' ); ?>"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 		<span itemscope itemtype="http://schema.org/Organization">
 			<meta itemprop="name" content="<?php echo get_bloginfo( 'name' );?>">

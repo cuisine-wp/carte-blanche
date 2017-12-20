@@ -6,81 +6,88 @@
  * @since 2015
  */
 	
-	namespace CarteBlanche;
-
-	use Cuisine\Wrappers\Script;
-	use Cuisine\Utilities\Url;
-	use Cuisine\View\Image;
-	use Cuisine\View\Nav;
-
-	/**
-	 * Hooked 'init' function whichs starts this theme. 
-	 *
-	 * @access public
-	 * @return void
-	 */
-	add_action( 'init', function(){
-		
-		if( class_exists( 'Cuisine' ) ){
-
-		/****************************************/
-		/**           Navigation                */
-		/****************************************/
-
-			Nav::register( array( 'Main', 'Top', 'Footer', 'Mobile' ) );
-
-			//set blog and nieuws menu-items as active
-			$args = array( 'type' => 'single', 'query' => 'post' );
-			Nav::setActive( 'Nieuws', $args );
-			Nav::setActive( 'Blog', $args );
+namespace CarteBlanche;
 
 
-			/****************************************/
-			/**           Scripts                   */
-			/****************************************/
+/**
+ * Main class that bootstraps the plugin.
+ */
+if (!class_exists('ThemeIgniter')) {
 
-			//modernizr in the head:
-			$modernizr = Url::theme( 'vendors' ).'/modernizr-2.8.2.min.js';
-			wp_enqueue_script( 'modernizr', $modernizr );
-				
-			//register the scripts
-			Script::register( 'jquery', Url::wp( 'jquery/jquery' ), true );
-			Script::register( 'theme', Url::theme( 'js' ).'/script', true );
-
-
-		/****************************************/
-		/**           Image Sizes               */
-		/****************************************/
-
-			Image::addSupport();
-
-			//add custom image sizes:
-			Image::addSize( 'tile', 350, 350 );
-			Image::addSize( 'billboard', 265, 460 );
-
-		}
-
-	});
+    class ThemeIgniter {
+    
+        /**
+         * Plugin bootstrap instance.
+         *
+         * @var \CarteBlanche\ThemeIgniter
+         */
+        protected static $instance = null;
 
 
+        /**
+         * Plugin directory name.
+         *
+         * @var string
+         */
+        protected static $dirName = '';
+
+        /**
+         * Constructor
+         */
+        protected function __construct(){
+            // Load this theme.
+            $this->load();
+        }
 
 
+        /**
+         * Load the framework classes.
+         *
+         * @return void
+         */
+        protected function load(){
+
+            //require the language domain:
+            $path = __DIR__ . DS . '/languages/';
+            load_theme_textdomain( 'carteblanche', false, $path );
+
+            //require the autoloader:
+            require( __DIR__ . DS . 'autoloader.php');
 
 
-	/**
-	 * Overwrite your JS files here;
-	 *
-	 * @access public
-	 * @return void
-	 */
-	add_filter( 'cuisine_scripts', function( $scripts ){
+            //initiate the autoloader:
+            ( new \CarteBlanche\Autoloader() )->register()->load();
 
-		
+            //give off the loaded hook
+            do_action( 'theme_loaded' );
 
-		return $scripts;
-	
-	});
+        }
 
+        /**
+         * Init the plugin classes
+         *
+         * @return \Crouton\ThemeIgniter
+         */
+        public static function getInstance(){
 
-	show_admin_bar( false );
+            if ( is_null( static::$instance ) ){
+                static::$instance = new static();
+            }
+            return static::$instance;
+        }
 
+    }
+}
+
+add_action( 'wp_loaded', function(){
+    if( class_exists( 'Cuisine' ) ){
+    
+        \CarteBlanche\ThemeIgniter::getInstance();
+    
+    }else if( !is_admin() ){
+        wp_die( sprintf( 
+            'The <a href="%s">Cuisine Plugin</a> needs to be installed for this theme to work.',
+            'https://get-cuisine.cooking'
+        ));
+    }
+});

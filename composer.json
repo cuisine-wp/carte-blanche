@@ -1,6 +1,6 @@
 {
   "name": "chefduweb/carte-blanche",
-  "description": "A modern WordPress starter theme using Sass, Grunt & Bourbon",
+  "description": "A modern WordPress starter theme using ES6, Sass, Flexbox & CSS Grid",
   "keywords": ["wordpress", "theme", "canvas", "blank"],
   "homepage": "http://www.chefduweb.nl/carte-blanche-bourbon",
   "license": "GPLv3",
@@ -9,16 +9,11 @@
       "name": "Luc Princen",
       "email": "luc@chefduweb.nl",
       "homepage": "http://www.chefduweb.nl"
-    },
-    {
-      "name": "Remy Bakker",
-      "email": "remy@chefduweb.nl",
-      "homepage": "http://www.chefduweb.nl"
     }
   ],
   "type": "wordpress-theme",
   "require": {
     "php": ">=5.3.2",
-    "chefduweb/cuisine": "dev-master"
+    "cuisine/cuisine": "dev-master"
   }
 }

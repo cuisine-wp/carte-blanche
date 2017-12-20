@@ -6,7 +6,7 @@
  * @since 2015
  */
 
-	use Cuisine\View\Template;
+	use CarteBlanche\Template;
 
 
 	Template::header();
